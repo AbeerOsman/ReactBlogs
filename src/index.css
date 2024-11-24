@@ -1,13 +1,93 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* base styles */
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Quicksand;
+  color: #333;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 600px;
+  border-bottom: 2px solid #f2f2f2;
+}
+
+.navbar h1 {
+  color: rgb(2, 2, 201);
+}
+
+.navbar .linkes {
+  margin-left: auto;
+}
+
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+
+.navbar a:hover {
+  color: blue;
+  background-color: rgb(226, 226, 234);
+  border-radius: 5px;
+}
+
+/* .......... */
+
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* .......... */
+
+.blog-preview {
+  border-bottom: 1px solid #c5d2f3;
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 10px 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  ;
+}
+
+.blog-preview:hover {
+  background-color: #eeeff4;
+  transform: translateY(-5px);
+  border-bottom: 2px solid #afc3f6;
+}
+
+.blog-preview h2 {
+  color: rgb(2, 2, 201);
+  padding-bottom: 8px;
+  font-size: 20px;
+}
+
+.blog-preview button {
+  color: rgb(255, 255, 255);
+  background-color: rgb(240, 168, 36);
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  margin-left: 450px;
+  font-size: 16px;
+  font-weight: 100px;
+}
+
+/* .......... */
+
+.Blog-List h1 {
+  color: #333;
+  font-weight: 400;
+  text-align: center;
+  background-image: url(https://odoocdn.com/openerp_website/static/src/img/highlights/yellow_highlight_bold_05.svg);
+  background-position: center 60%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  white-space: nowrap;
 }
