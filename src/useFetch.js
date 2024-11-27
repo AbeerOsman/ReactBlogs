@@ -10,14 +10,15 @@ import { useState, useEffect } from "react";
 const useFetch = (url) => {
 
     const [data, setData] = useState(null);
-    const [isLoading, setIsloading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    // AbortController() helps use to go between pages even if it's in the loading state, by associated with specifec fetch
+    const abortCont = new AbortController();
 
     useEffect(() => {
         setTimeout(() => {
-
-            fetch(url)
+            // {signal: abortCont.signal} to associated with this fetch to stop the fetch later
+            fetch(url, { signal: abortCont.signal })
                 .then(res => {
                     if (!res.ok) {
                         throw Error('Could not fetch the data from this server...')
@@ -28,25 +29,31 @@ const useFetch = (url) => {
 
                 .then(data => {
                     setData(data);
-                    setIsloading(false);
+                    setIsLoading(false);
                     setError(null); //if the data is fetched susseccfully 
                 })
 
                 .catch(err => {
-                    setError(err.message);
-                    setIsloading(false); //if the data is NOT fetched susseccfully
+                    if (err.name === 'AbortError') {
+                        console.log('fetch aborted')
+                    } else {
+                        setError(err.message);
+                        setIsLoading(false); //if the data is NOT fetched susseccfully
+                    }
 
-                })
+                },0)
 
-        }, 1000);
+        });
+
+        return () => abortCont.abort();
     }, [url]);
 
 
 
-// this function "useFetch" should returen the 3's feature that does: 
-return { data, isLoading, error };
+    // this function "useFetch" should returen the 3's feature that does: 
+    return { data, isLoading, error };
 
-} 
+}
 
 // we should write this line to make us use this function outside thi component/file.
 export default useFetch; 

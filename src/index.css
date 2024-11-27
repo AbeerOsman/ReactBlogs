@@ -18,7 +18,7 @@
 }
 
 .navbar h1 {
-  color: rgb(2, 2, 201);
+  color: #f1356d;
 }
 
 .navbar .linkes {
@@ -32,8 +32,8 @@
 }
 
 .navbar a:hover {
-  color: blue;
-  background-color: rgb(226, 226, 234);
+  color: #f1356d;
+  background-color: #fbeff3;
   border-radius: 5px;
 }
 
@@ -57,20 +57,23 @@
 }
 
 .blog-preview:hover {
-  background-color: #eeeff4;
-  transform: translateY(-5px);
-  border-bottom: 2px solid #afc3f6;
+  transform: translateX(-20px);
+  border-bottom: 5px solid #afc3f6;
+}
+
+.blog-preview a {
+  text-decoration: none;
 }
 
 .blog-preview h2 {
-  color: rgb(2, 2, 201);
+  color: #f1356d;
   padding-bottom: 8px;
   font-size: 20px;
 }
 
 .blog-preview button {
-  color: rgb(255, 255, 255);
-  background-color: rgb(240, 168, 36);
+  color: rgb(0, 0, 0);
+  background-color: #f1356d;
   padding: 5px;
   border: none;
   border-radius: 3px;
@@ -85,9 +88,81 @@
   color: #333;
   font-weight: 400;
   text-align: center;
-  background-image: url(https://odoocdn.com/openerp_website/static/src/img/highlights/yellow_highlight_bold_05.svg);
+  background-image: url(https://odoocdn.com/openerp_website/static/src/img/graphics/underline.svg);
   background-position: center 60%;
   background-repeat: no-repeat;
   background-size: contain;
   white-space: nowrap;
+}
+
+/* create new blog form */
+.create {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.create label {
+  text-align: left;
+  display: block;
+}
+
+.create h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 30px;
+}
+
+.create input,
+.create textarea,
+.create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.create button {
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* not found page */
+.not-found {
+  text-align: center;
+  margin-top: 100px;
+  font-family: Arial, sans-serif;
+}
+
+.not-found h2 {
+  font-size: 48px;
+  color: #ff4b5c;
+  margin-bottom: 20px;
+}
+
+.not-found p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.not-found a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.not-found a:hover {
+  background-color: #0056b3;
 }
